@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 #from urlparse import urljoin
-from scrapy.utils.url import urljoin_rfc
-from scrapy.spider import BaseSpider
+# from scrapy.utils.url import urljoin_rfc
+from scrapy.spiders import BaseSpider
 from scrapy.selector import HtmlXPathSelector
 from scrapy.http import Request
 from scrapy.http import HtmlResponse 
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
+
 
 from scrapy.exceptions import DropItem
 
@@ -19,14 +22,26 @@ class Tsinghua_Spider(BaseSpider):
     start_urls = [
 #         "http://www.tsinghua.edu.cn",
 #         "http://info.tsinghua.edu.cn"
-        "http://www.csdn.net"
+        "http://blog.csdn.net",
+        "http://stackoverflow.com",
+        "http://blog.chinaunix.net"
+#         "http://www.oschina.net"
+#         "http://www.binvul.com"
+        "http://jobs.zhaopin.com/"
+        
+        
         
        
     ]
     
     def __init__(self):
         """init the allowed_domain"""
-        self.allowed_domains = ['tsinghua.edu.cn']
+        self.allowed_domains = ['csdn.net','stackoverflow.com','chinaunix.net','zhaopin.com']
+#         self.rules = {
+#             Rule(LxmlLinkExtractor(allow='page')),
+#             Rule(LxmlLinkExtractor(allow='/index\.php/question/questionType\?type=4$')),
+#             Rule(LxmlLinkExtractor(allow='/html/question/\d+/\d+\.shtml$'), callback='parse_content')
+#     }
        
 
     def parse(self, response):

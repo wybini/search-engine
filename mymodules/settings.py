@@ -9,8 +9,8 @@ NEWSPIDER_MODULE = 'mymodules.spiders'
 DEFAULT_ITEM_CLASS = 'mymodules.items.Website'
 
 ITEM_PIPELINES = {
-        #'mymodules.pipelines_bak.FilterWordsPipeline':543,
-       'mymodules.pipelines_bak.DuplicatesPipeline':500,
+        #'mymodules.pipelines.FilterWordsPipeline':543,
+       'mymodules.pipelines.DuplicatesPipeline':500,
                     
 }
 
@@ -23,7 +23,7 @@ COOKIES_ENABLED = True
 SCHEDULER_ORDER = 'BFO'
 
 DEPTH_PRIORITY = 0
-DEPTH_LIMIT = 2 #设置爬虫深度
+DEPTH_LIMIT = 3 #设置爬虫深度
 
 SPIDER_MIDDLEWARES = {
 }

@@ -1,16 +1,16 @@
-Python版本：2.7.4
+Python版本：2.7.6
 
-Django版本：1.5.4
+Django版本：1.6.1
 
 
-Scrapy版本：0.18.2
+Scrapy版本：0.14.4
 
 
 ElasticSearch版本：0.90.5
 
 
-项目中使用了Bloom Filter的Python插件
-项目地址：https://github.com/yming0221/pybloomfiltermmap
+
+项目地址：https://github.com/wybini/search-engine
 也可以直接使用pip install pybloomfiltermmap安装
 
 使用：
